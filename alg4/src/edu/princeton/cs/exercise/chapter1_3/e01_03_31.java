@@ -29,22 +29,171 @@ class e01_03_31 {
     node1.next = node2;
     node1.value = "1";
 
-    DoubleNode curNode = node1;
+    node2.prev = node1;
+    node2.next = node3;
+    node2.value = "2";
+
+    node3.prev = node2;
+    node3.next = node4;
+    node3.value = "3";
+
+    node4.prev = node3;
+    node4.next = node5;
+    node4.value = "4";
+
+    node5.prev = node4;
+    node5.next = null;
+    node5.value = "5";
+
+    DoubleNode node = new DoubleNode();
+    node.value = "n";
+
+    //    DoubleNode curNode = insertFirst(node3, node);
+    //    DoubleNode curNode = insertLast(node3, node);
+    //    DoubleNode curNode = deleteLast(node3);
+    //    DoubleNode curNode = deleteFirst(node3);
+    //    DoubleNode curNode = insertCurNodePrev(node3, node);
+    //    DoubleNode curNode = insertCurNodeNext(node3, node);
+    DoubleNode curNode = removeCurNode(node3);
+    if (curNode == null) {
+      return;
+    }
+    DoubleNode first = findFirst(curNode);
+    curNode = first;
     while (curNode != null) {
       StdOut.print(curNode.value);
       curNode = curNode.next;
     }
   }
 
+  private static DoubleNode removeCurNode(DoubleNode<String> removeNode) {
+    if (removeNode.prev != null) {
+      removeNode.prev.next = removeNode.next;
+    }
+    if (removeNode.next != null) {
+      removeNode.next.prev = removeNode.prev;
+    }
 
+    DoubleNode returnNode = null;
+    if (removeNode.prev != null) {
+      returnNode = removeNode.prev;
+    } else if (removeNode.next != null) {
+      returnNode = removeNode.next;
+    }
 
+    removeNode.prev = null;
+    removeNode.next = null;
+    return returnNode;
+  }
 
-  public static class DoubleNode<E> {
+  private static DoubleNode insertCurNodeNext(DoubleNode<String> listNode, DoubleNode insertNode) {
+    if (listNode == null) {
+      return insertNode;
+    }
+
+    if (listNode.next != null) {
+      listNode.next.prev = insertNode;
+      insertNode.next = listNode.next;
+    }
+
+    listNode.next = insertNode;
+    insertNode.prev = listNode;
+    return insertNode;
+  }
+
+  private static DoubleNode insertCurNodePrev(DoubleNode<String> listNode, DoubleNode insertNode) {
+    if (listNode == null) {
+      return insertNode;
+    }
+
+    if (listNode.prev != null) {
+      listNode.prev.next = insertNode;
+      insertNode.prev = listNode.prev;
+    }
+    listNode.prev = insertNode;
+    insertNode.next = listNode;
+    return insertNode;
+  }
+
+  private static DoubleNode deleteFirst(DoubleNode<String> listNode) {
+    if (listNode == null) {
+      return null;
+    }
+    DoubleNode first = findFirst(listNode);
+    DoubleNode newFisrt;
+    if (first.next == null) {
+      return null;
+    } else {
+      first.next.prev = null;
+      newFisrt = first.next;
+      first.next = null;
+    }
+
+    return newFisrt;
+  }
+
+  private static DoubleNode deleteLast(DoubleNode<String> listNode) {
+    if (listNode == null) {
+      return null;
+    }
+
+    DoubleNode last = findLast(listNode);
+    DoubleNode newLast;
+    if (last.prev == null) {
+      return null;
+    } else {
+      last.prev.next = null;
+      newLast = last.prev;
+      last.prev = null;
+    }
+
+    return newLast;
+  }
+
+  private static DoubleNode findFirst(DoubleNode curNode) {
+    while (curNode.prev != null) {
+      curNode = curNode.prev;
+    }
+    return curNode;
+  }
+
+  private static DoubleNode findLast(DoubleNode curNode) {
+    while (curNode.next != null) {
+      curNode = curNode.next;
+    }
+    return curNode;
+  }
+
+  private static DoubleNode insertLast(DoubleNode<String> listNode, DoubleNode insertNode) {
+    if (listNode == null) {
+      return insertNode;
+    }
+    DoubleNode last = findLast(listNode);
+    last.next = insertNode;
+    insertNode.prev = last;
+
+    return insertNode;
+  }
+
+  private static DoubleNode insertFirst(DoubleNode listNode, DoubleNode insertNode) {
+    if (listNode == null) {
+      return insertNode;
+    }
+
+    DoubleNode first = findFirst(listNode);
+
+    first.prev = insertNode;
+    insertNode.next = first;
+
+    return insertNode;
+  }
+
+  private static class DoubleNode<E> {
     E value;
     DoubleNode next;
     DoubleNode prev;
 
-    public DoubleNode(DoubleNode prev,DoubleNode next, E value,) {
+    public DoubleNode(DoubleNode prev, DoubleNode next, E value) {
       this.next = next;
       this.value = value;
       this.prev = prev;
