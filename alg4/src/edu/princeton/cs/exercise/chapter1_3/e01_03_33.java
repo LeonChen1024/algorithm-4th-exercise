@@ -2,6 +2,12 @@ package edu.princeton.cs.exercise.chapter1_3;
 
 import edu.princeton.cs.algs4.StdOut;
 
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Spliterator;
+import java.util.Stack;
+import java.util.function.Consumer;
+
 /**
  * 1.3.33 Deque. A double-ended queue or deque (pronounced “deck”) is like a stack or a queue but
  * supports adding and removing items at both ends. A deque stores a collection of items and
@@ -43,10 +49,15 @@ class e01_03_33 {
     deque.pushLeft("3");
     deque.pushRitht("4");
 
-
     StdOut.print(deque.popLeft());
     StdOut.print(deque.popRight());
     StdOut.print(deque.size());
+
+    StdOut.println();
+
+    for (String s : deque) {
+      StdOut.print(s);
+    }
   }
 
   /**
@@ -60,8 +71,8 @@ class e01_03_33 {
    *     Item popRight() remove an item from the right end
    * </code>
    */
-  private static class Deque<Item> {
-    private Node left;
+  private static class Deque<Item> implements Iterable<Item>{
+    private Node<Item> left;
     private int size;
 
     public Deque() {
@@ -129,6 +140,31 @@ class e01_03_33 {
       return curNode.value;
     }
 
+    @Override
+    public Iterator<Item> iterator() {
+      return new Itera();
+    }
+
+    class Itera implements Iterator<Item>{
+
+      private Node<Item> curNode;
+
+      public Itera() {
+        curNode = left;
+      }
+
+      @Override
+      public boolean hasNext() {
+        return curNode !=null;
+      }
+
+      @Override
+      public Item next() {
+        Node<Item> oldNode = curNode;
+        curNode = curNode.next;
+        return oldNode.value;
+      }
+    }
 
 
     private static class Node<E> {
