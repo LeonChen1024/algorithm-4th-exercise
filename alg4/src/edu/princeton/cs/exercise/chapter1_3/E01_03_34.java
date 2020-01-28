@@ -79,6 +79,7 @@ class E01_03_34 {
       Item[] newItems = (Item[]) new Object[i];
       System.arraycopy(items,0,newItems,0,items.length);
       items = newItems;
+      size = i;
     }
 
     @Override
