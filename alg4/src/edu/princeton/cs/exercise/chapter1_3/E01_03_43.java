@@ -20,8 +20,6 @@ class E01_03_43 {
 
   public static void main(String[] args) {
 
-    // 因为栈是后入先出,所以需要一个临时栈将弹出的 item 按照正确的顺序重新压栈到目标栈.
-
     listFile("/Users/test", 1);
   }
 
