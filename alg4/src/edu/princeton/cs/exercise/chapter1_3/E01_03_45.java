@@ -4,107 +4,60 @@ import edu.princeton.cs.algs4.Stack;
 import edu.princeton.cs.algs4.StdOut;
 
 /**
- * 1.3.44 Text editor buffer. Develop a data type for a buffer in a text editor that implements the
- * following API: <code>
- * public class Buffer
- * Buffer() create an empty buffer
- * void insert(char c) insert c at the cursor position
- * char delete() delete and return the character at the cursor
- * void left(int k) move the cursor k positions to the left
- * void right(int k) move the cursor k positions to the right
- * int size() number of characters in the buffer
- * API for a text buffer
- * </code> Hint : Use two stacks.
+ * 1.3.45 Stack generability. Suppose that we have a sequence of intermixed push and pop operations
+ * as with our test stack client, where the integers 0, 1, . . . , N-1 in that order (push
+ * directives) are intermixed with N minus signs (pop directives). Devise an algorithm that
+ * determines whether the intermixed sequence causes the stack to underflow. (You may use only an
+ * amount of space independent of N—you cannot store the integers in a data structure.) Devise a
+ * linear-time algorithm that determines whether a given permutation can be generated as output by
+ * our test client (depending on where the pop directives occur).
  *
- * <p>文本编辑器缓冲. 开发一个数据类型给文本编辑器中的缓冲区实现了以下 API: <code>
- * public class Buffer
- * Buffer() 创建一个空的缓冲
- * void insert(char c) 将 c 插入到指针的位置
- * char delete() 删除并且返回指针所在的字符
- * void left(int k) 将指针向左移动 k 个位置
- * void right(int k) 将指针向右移动 k 个位置
- * int size() 缓冲里字符的数量
- * API for a text buffer
- * </code> 提示: 使用两个 stack.
+ * <p>Solution: The stack does not overflow unless there exists an integer k such that the first k
+ * pop operations occur before the first k push operations. If a given permutation can be generated,
+ * it is uniquely generated as follows: if the next integer in the output permutation is in the top
+ * of the stack, pop it; otherwise, push it onto the stack.
+ *
+ * <p>栈可生成性.假设我们有一个混合了 push 和 pop 操作的序列作为我们测试的栈客户端,我们使用 0,1,...,N-1 作为顺序(入栈)<br>
+ * 并且混杂了到 N 的 负号(表示弹出).设计一个算法表明一个混合序列是否会导致栈下溢出.(你必须使用与 N 无关的空间量-你不可以存储<br>
+ * 所有整数到一个数据结构中.)设计一个线性时间算法表明一个给定的排列可以被我们的测试程序生成(根据 pop 操作在哪里出现).
+ *
+ * <p>解决方案:栈除非存在一个整数 k 使得前 k 次 pop 操作发生在前 k 次 push 操作之前的时候会出现溢出.如果一个给定序列可以生成<br>
+ * ,那么下面是他的唯一生成方式: 如果输出序列中的下一个整数在栈的顶部就弹出,否则继续往栈里推入.
  *
  * @author LeonChen
- * @since 2/3/20
+ * @since 2/6/20
  */
 class E01_03_45 {
 
   public static void main(String[] args) {
-    EditorBuffer buffer = new EditorBuffer();
-    buffer.insert('1');
-    buffer.insert('2');
-    buffer.insert('3');
-    buffer.insert('4');
-    buffer.insert('5');
-    buffer.insert('6');
-    buffer.insert('7');
-    buffer.insert('8');
-    StdOut.println("add numbers util 8 = " + buffer);
-    StdOut.println(buffer.delete());
-    StdOut.println("buffer.delete() = " + buffer);
-    buffer.left(4);
-    buffer.delete();
-    StdOut.println("buffer.left(4) delete= " + buffer);
-
-    buffer.right(1);
-    buffer.delete();
-    StdOut.println("buffer.right(1) delete = " + buffer);
-    StdOut.println("buffer.size() = " + buffer.size());
+    StdOut.println(testGenerability("143", 5));
+    StdOut.println(testGenerability("413", 5));
   }
 
-  /** 使用两个栈,分别是左栈和右栈,光标的位置就是在左栈顶,当光标左移的时候就是将栈顶元素推入到右栈中,右移就是将右栈顶元素弹出推入到左栈中. */
-  public static class EditorBuffer {
-    Stack<Character> leftStack;
-    Stack<Character> rightStack;
+  private static boolean testGenerability(String permutation, int N) {
 
-    public EditorBuffer() {
-      leftStack = new Stack<Character>();
-      rightStack = new Stack<Character>();
-    }
+    Stack stack = new Stack();
+    StringBuilder src = new StringBuilder();
+    int cur = 0;
+    stack.push(cur);
+    src.append(cur);
+    for (int i = 0; i < permutation.length(); i++) {
+      Character c = permutation.charAt(i);
 
-    void insert(char c) {
-      leftStack.push(c);
-    }
-
-    char delete() {
-      return leftStack.pop();
-    }
-
-    void left(int k) {
-      for (int i = 0; i < k; i++) {
-        rightStack.push(leftStack.pop());
+      String cc = stack.peek().toString();
+      while (!cc.equals(c.toString())) {
+        cur = cur + 1;
+        if (cur > N - 1) {
+          return false;
+        }
+        stack.push(cur);
+        src.append(cur);
+        cc = stack.peek().toString();
       }
+      stack.pop();
+      src.append('-');
     }
-
-    void right(int k) {
-      for (int i = 0; i < k; i++) {
-        leftStack.push(rightStack.pop());
-      }
-    }
-
-    int size() {
-      return leftStack.size() + rightStack.size();
-    }
-
-    @Override
-    public String toString() {
-      StringBuilder result = new StringBuilder();
-      // 因为是从栈顶开始打印的,所以左栈要倒置,利用一个临时栈
-      Stack<Character> temp = new Stack<>();
-
-      for (Character c : leftStack) {
-        temp.push(c);
-      }
-      for (Character c : temp) {
-        result.append(c);
-      }
-      for (Character c : rightStack) {
-        result.append(c);
-      }
-      return result.toString();
-    }
+    StdOut.println(src);
+    return true;
   }
 }
