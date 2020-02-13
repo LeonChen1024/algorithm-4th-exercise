@@ -86,6 +86,19 @@ class e01_03_32 {
       size++;
     }
 
+    @Override
+    public String toString() {
+      StringBuilder s = new StringBuilder();
+      Node cur = first;
+
+      while (cur != null) {
+        s.append(cur.value + " ");
+        cur = cur.next;
+      }
+
+      return s.toString();
+    }
+
     private static class Node<E> {
       E value;
       Node next;
