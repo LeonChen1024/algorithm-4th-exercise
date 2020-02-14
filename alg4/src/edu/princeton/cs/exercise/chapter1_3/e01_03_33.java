@@ -3,10 +3,6 @@ package edu.princeton.cs.exercise.chapter1_3;
 import edu.princeton.cs.algs4.StdOut;
 
 import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Spliterator;
-import java.util.Stack;
-import java.util.function.Consumer;
 
 /**
  * 1.3.33 Deque. A double-ended queue or deque (pronounced “deck”) is like a stack or a queue but
@@ -71,11 +67,132 @@ class e01_03_33 {
    *     Item popRight() remove an item from the right end
    * </code>
    */
-  private static class Deque<Item> implements Iterable<Item>{
+  private static class Deque<Item> implements Iterable<Item> {
     private Node<Item> left;
+    private Node<Item> right;
     private int size;
 
     public Deque() {
+      left = null;
+      right = null;
+      size = 0;
+    }
+
+    public boolean isEmpty() {
+      return size == 0;
+    }
+
+    public int size() {
+      return size;
+    }
+
+    public void pushLeft(Item item) {
+      Node<Item> node = new Node<Item>(null, null, item);
+      if (left == null) {
+        left = node;
+        right = node;
+      } else {
+        node.next = left;
+        left.prev = node;
+        left = node;
+      }
+      size++;
+    }
+
+    public void pushRitht(Item item) {
+      Node<Item> node = new Node<>(null, null, item);
+      if (left == null) {
+        left = node;
+        right = node;
+      } else {
+        right.next = node;
+        node.prev = right;
+        right = node;
+      }
+      size++;
+    }
+
+    public Item popLeft() {
+      if (left == null) {
+        return null;
+      }
+      Node<Item> oldLeft = left;
+      left = left.next;
+      if (left == null) {
+        right = null;
+      } else {
+        left.prev = null;
+      }
+
+      oldLeft.next = null;
+      size--;
+      return oldLeft.value;
+    }
+
+    public Item popRight() {
+      if (right == null) {
+        return null;
+      }
+      Node<Item> oldright = right;
+      right = right.prev;
+
+      if (right == null) {
+        left = null;
+      } else {
+        right.next = null;
+      }
+
+      oldright.prev = null;
+      size--;
+      return oldright.value;
+    }
+
+    @Override
+    public Iterator<Item> iterator() {
+      return new Itera();
+    }
+
+    class Itera implements Iterator<Item> {
+
+      private Node<Item> curNode;
+
+      public Itera() {
+        curNode = left;
+      }
+
+      @Override
+      public boolean hasNext() {
+        return curNode != null;
+      }
+
+      @Override
+      public Item next() {
+        Node<Item> oldNode = curNode;
+        curNode = curNode.next;
+        return oldNode.value;
+      }
+    }
+
+    private static class Node<E> {
+      E value;
+      Node next;
+      Node prev;
+
+      public Node(Node prev, Node next, E value) {
+        this.next = next;
+        this.prev = prev;
+        this.value = value;
+      }
+
+      public Node() {}
+    }
+  }
+
+  private static class SinglyLinkedDeque<Item> implements Iterable<Item> {
+    private Node<Item> left;
+    private int size;
+
+    public SinglyLinkedDeque() {
       left = null;
       size = 0;
     }
@@ -101,11 +218,11 @@ class e01_03_33 {
 
     public void pushRitht(Item item) {
       Node<Item> node = new Node<>(null, item);
-      if (left == null){
+      if (left == null) {
         left = node;
-      }else {
+      } else {
         Node<Item> curNode = left;
-        while (curNode.next !=null){
+        while (curNode.next != null) {
           curNode = curNode.next;
         }
         curNode.next = node;
@@ -114,7 +231,7 @@ class e01_03_33 {
     }
 
     public Item popLeft() {
-      if (left == null){
+      if (left == null) {
         return null;
       }
       Node<Item> oldLeft = left;
@@ -125,15 +242,14 @@ class e01_03_33 {
     }
 
     public Item popRight() {
-      if (left == null){
+      if (left == null) {
         return null;
       }
       Node<Item> curNode = left;
       Node<Item> preNode = null;
-      while (curNode.next !=null){
+      while (curNode.next != null) {
         preNode = curNode;
         curNode = curNode.next;
-
       }
       preNode.next = null;
       size--;
@@ -145,7 +261,7 @@ class e01_03_33 {
       return new Itera();
     }
 
-    class Itera implements Iterator<Item>{
+    class Itera implements Iterator<Item> {
 
       private Node<Item> curNode;
 
@@ -155,7 +271,7 @@ class e01_03_33 {
 
       @Override
       public boolean hasNext() {
-        return curNode !=null;
+        return curNode != null;
       }
 
       @Override
@@ -165,7 +281,6 @@ class e01_03_33 {
         return oldNode.value;
       }
     }
-
 
     private static class Node<E> {
       E value;
