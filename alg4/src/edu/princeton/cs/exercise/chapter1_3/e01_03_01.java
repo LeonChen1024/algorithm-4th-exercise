@@ -14,7 +14,7 @@ import edu.princeton.cs.algs4.StdOut;
  * @author LeonChen
  * @since 12/24/19
  */
-class e01_03_01 {
+public class e01_03_01 {
 
   public static class FixedCapacityStackOfStrings implements Iterable<String> {
     private String[] a; // holds the items
