@@ -12,7 +12,7 @@ import edu.princeton.cs.algs4.StdOut;
  * @author LeonChen
  * @since 1/21/20
  */
-class e01_03_32 {
+public class e01_03_32 {
 
   public static void main(String[] args) {
     Steque<String> steque = new Steque();
@@ -37,7 +37,7 @@ class e01_03_32 {
    *
    * @param <E>
    */
-  private static class Steque<E> {
+  public static class Steque<E> {
     private Node first;
     private Node last;
     private int size;
@@ -46,6 +46,10 @@ class e01_03_32 {
       first = null;
       last = null;
       size = 0;
+    }
+
+    public boolean isEmpty() {
+      return size == 0;
     }
 
     public void push(E e) {
@@ -97,6 +101,10 @@ class e01_03_32 {
       }
 
       return s.toString();
+    }
+
+    public int size() {
+      return size;
     }
 
     private static class Node<E> {

@@ -59,7 +59,7 @@ import edu.princeton.cs.algs4.StdOut;
  * @author LeonChen
  * @since 1/20/20
  */
-class e01_03_30 {
+public class e01_03_30 {
 
   public static void main(String[] args) {
     Node<String> node5 = new Node<>(null, "5");
