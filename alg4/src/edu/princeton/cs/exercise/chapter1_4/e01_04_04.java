@@ -1,5 +1,8 @@
 package edu.princeton.cs.exercise.chapter1_4;
 
+import java.util.Arrays;
+
+import edu.princeton.cs.algs4.BinarySearch;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
 
@@ -11,7 +14,7 @@ import edu.princeton.cs.algs4.StdOut;
  * @author LeonChen
  * @since 3/4/20
  */
-class e01_04_04 {
+public class e01_04_04 {
   /**
    * A : <code>
    *     int N = a.length;
@@ -76,22 +79,22 @@ class e01_04_04 {
     }
   }
 
-  //  public static class TwoSumFast {
-  //    public static int count(int[] a) { // Count pairs that sum to 0.
-  //      Arrays.sort(a);
-  //      int N = a.length;
-  //      int cnt = 0;
-  //      for (int i = 0; i < N; i++) {
-  //        if (BinarySearch.rank(-a[i], a) > i) {
-  //          cnt++;
-  //        }
-  //      }
-  //      return cnt;
-  //    }
-  //
-  //    public static void main(String[] args) {
-  //      int[] a = In.readInts(args[0]);
-  //      StdOut.println(count(a));
-  //    }
-  //  }
+  public static class TwoSumFast {
+    public static int count(int[] a) { // Count pairs that sum to 0.
+      Arrays.sort(a);
+      int N = a.length;
+      int cnt = 0;
+      for (int i = 0; i < N; i++) {
+        if (BinarySearch.rank(-a[i], a) > i) {
+          cnt++;
+        }
+      }
+      return cnt;
+    }
+
+    public static void main(String[] args) {
+      int[] a = In.readInts(args[0]);
+      StdOut.println(count(a));
+    }
+  }
 }
