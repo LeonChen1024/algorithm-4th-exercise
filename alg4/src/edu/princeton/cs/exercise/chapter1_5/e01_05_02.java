@@ -124,11 +124,13 @@ class e01_05_02 {
 
     public int find(int p) {
 
-      accessNum += 2;
       // find root
       // id[p] save the parent of p
-      while (p != id[p]) p = id[p];
-
+      while (p != id[p]) {
+        p = id[p];
+        accessNum += 2;
+      }
+      accessNum++;
       return p;
     }
 
