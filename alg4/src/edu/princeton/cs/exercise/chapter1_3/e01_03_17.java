@@ -11,7 +11,7 @@ import edu.princeton.cs.exercise.chapter1_2.e01_02_13_and_14;
  * @author LeonChen
  * @since 1/6/20
  */
-class e01_03_17 {
+public class e01_03_17 {
 
   public static void main(String[] args) {
 
@@ -22,7 +22,7 @@ class e01_03_17 {
     }
   }
 
-  public static class Transaction implements Comparable<e01_02_13_and_14.Transaction> {
+  public static class Transaction implements Comparable<Transaction> {
 
     private final String name;
     private final e01_02_13_and_14.SmartDate date;
@@ -78,7 +78,7 @@ class e01_03_17 {
     }
 
     @Override
-    public int compareTo(e01_02_13_and_14.Transaction o) {
+    public int compareTo(Transaction o) {
       if (this.amount > o.amount()) return 1;
       else if (this.amount < o.amount()) return -1;
       else return 0;
