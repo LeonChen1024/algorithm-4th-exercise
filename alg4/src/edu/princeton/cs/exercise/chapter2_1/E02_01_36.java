@@ -25,7 +25,7 @@ import edu.princeton.cs.algs4.Stopwatch;
  * @author LeonChen
  * @since 5/29/20
  */
-class E02_01_36 {
+public class E02_01_36 {
 
   private static final String INSERTION = "INSERTION";
   private static final String SELECTION = "SELECTION";
@@ -122,7 +122,7 @@ class E02_01_36 {
             + usedTime / x);
   }
 
-  private static Comparable[] getRandomArr(int n) {
+  public static Comparable[] getRandomArr(int n) {
     Comparable[] a = new Comparable[n];
     for (int i = 0; i < n; i++) {
       a[i] = StdRandom.uniform(n);
@@ -130,7 +130,7 @@ class E02_01_36 {
     return a;
   }
 
-  private static Comparable[] getH0H1Arr(int n) {
+  public static Comparable[] getH0H1Arr(int n) {
     Comparable[] a = new Comparable[n];
     for (int i = 0; i < n / 2; i++) {
       a[i] = 0;
@@ -141,13 +141,13 @@ class E02_01_36 {
     return a;
   }
 
-  private static Comparable[] getRecursiveHalfArr(int n) {
+  public static Comparable[] getRecursiveHalfArr(int n) {
     Comparable[] a = new Comparable[n];
     halfSet(a, 0, 0, (n + 1) / 2);
     return a;
   }
 
-  private static Comparable[] halfSet(Comparable[] a, int start, int value, int len) {
+  public static Comparable[] halfSet(Comparable[] a, int start, int value, int len) {
     if (len == 0 || start >= a.length) {
       return a;
     }
@@ -159,7 +159,7 @@ class E02_01_36 {
     return halfSet(a, start + len, value + 1, (len + 1) / 2);
   }
 
-  private static Comparable[] getH0HrArr(int n) {
+  public static Comparable[] getH0HrArr(int n) {
     Comparable[] a = new Comparable[n];
     for (int i = 0; i < n / 2; i++) {
       a[i] = 0;

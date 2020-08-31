@@ -27,7 +27,7 @@ import edu.princeton.cs.algs4.Stopwatch;
  * @author LeonChen
  * @since 5/29/20
  */
-class E02_01_35 {
+public class E02_01_35 {
 
   private static final String INSERTION = "INSERTION";
   private static final String SELECTION = "SELECTION";
@@ -83,7 +83,7 @@ class E02_01_35 {
     StdOut.println(" when sort is " + type + " , used time is " + usedTime / x);
   }
 
-  private static Comparable[] getDiscreteArr(int n) {
+  public static Comparable[] getDiscreteArr(int n) {
     Comparable[] a = new Comparable[n];
     for (int i = 0; i < n; i++) {
       a[i] = StdRandom.discrete(new int[] {3, 5, 2});
@@ -91,7 +91,7 @@ class E02_01_35 {
     return a;
   }
 
-  private static Comparable[] getGeometricArr(int n) {
+  public static Comparable[] getGeometricArr(int n) {
     Comparable[] a = new Comparable[n];
     for (int i = 0; i < n; i++) {
       a[i] = StdRandom.geometric(0.6);
@@ -99,7 +99,7 @@ class E02_01_35 {
     return a;
   }
 
-  private static Comparable[] getPoissonArr(int n) {
+  public static Comparable[] getPoissonArr(int n) {
     Comparable[] a = new Comparable[n];
     for (int i = 0; i < n; i++) {
       a[i] = StdRandom.poisson(10);
@@ -107,7 +107,7 @@ class E02_01_35 {
     return a;
   }
 
-  private static Comparable[] getGaussianArr(int n) {
+  public static Comparable[] getGaussianArr(int n) {
     Comparable[] a = new Comparable[n];
     for (int i = 0; i < n; i++) {
       a[i] = StdRandom.gaussian();
