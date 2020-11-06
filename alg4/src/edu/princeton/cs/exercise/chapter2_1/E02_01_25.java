@@ -1,5 +1,6 @@
 package edu.princeton.cs.exercise.chapter2_1;
 
+import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
 import edu.princeton.cs.algs4.Stopwatch;
 
@@ -32,6 +33,7 @@ class E02_01_25 {
       insertionSortWithoutExch(a);
       avgTime += timer.elapsedTime();
     }
+    StdOut.println("avgTime = " + avgTime);
   }
 
   private static void insertionSortWithoutExch(Comparable[] a) {
