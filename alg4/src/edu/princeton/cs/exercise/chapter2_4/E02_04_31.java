@@ -28,7 +28,15 @@ class E02_04_31 {
    *
    * @param args
    */
-  public static void main(String[] args) {}
+  public static void main(String[] args) {
+    BiMinPQ<Integer> pq = new BiMinPQ<Integer>();
+    while (!StdIn.isEmpty()) {
+      String item = StdIn.readString();
+      if (!item.equals("-")) pq.insert(Integer.valueOf(item));
+      else if (!pq.isEmpty()) StdOut.print(pq.delMin() + " ");
+    }
+    StdOut.println("(" + pq.size() + " left on pq)");
+  }
 
   public static class BiMinPQ<Key> extends MinPQ<Key> {
 
@@ -58,16 +66,6 @@ class E02_04_31 {
       for (int i = 1; i < lo; i++) {
         exch(ps.get(i - 1), ps.get(i));
       }
-    }
-
-    public static void main(String[] args) {
-      BiMinPQ<String> pq = new BiMinPQ<String>();
-      while (!StdIn.isEmpty()) {
-        String item = StdIn.readString();
-        if (!item.equals("-")) pq.insert(item);
-        else if (!pq.isEmpty()) StdOut.print(pq.delMin() + " ");
-      }
-      StdOut.println("(" + pq.size() + " left on pq)");
     }
   }
 }
