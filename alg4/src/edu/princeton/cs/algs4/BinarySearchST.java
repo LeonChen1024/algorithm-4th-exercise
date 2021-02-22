@@ -61,10 +61,10 @@ import java.util.NoSuchElementException;
  * <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
  */
 public class BinarySearchST<Key extends Comparable<Key>, Value> {
-    private static final int INIT_CAPACITY = 2;
-    private Key[] keys;
-    private Value[] vals;
-    private int n = 0;
+    protected static final int INIT_CAPACITY = 2;
+    protected Key[] keys;
+    protected Value[] vals;
+    protected int n = 0;
     public int compares;
 
     /**
@@ -85,7 +85,7 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> {
     }
 
     // resize the underlying arrays
-    private void resize(int capacity) {
+    protected void resize(int capacity) {
         assert capacity >= n;
         Key[] tempk = (Key[]) new Comparable[capacity];
         Value[] tempv = (Value[]) new Object[capacity];
