@@ -394,7 +394,7 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> {
      *  Check internal invariants.
      ***************************************************************************/
 
-    private boolean check() {
+    protected boolean check() {
         return isSorted() && rankCheck();
     }
 
