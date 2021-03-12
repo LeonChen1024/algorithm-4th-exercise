@@ -189,6 +189,7 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> {
 
         int i = rank(key);
 
+        compares++;
         // key is already in table
         if (i < n && keys[i].compareTo(key) == 0) {
             vals[i] = val;

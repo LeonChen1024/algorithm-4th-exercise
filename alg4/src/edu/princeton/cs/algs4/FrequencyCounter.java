@@ -113,6 +113,33 @@ public class FrequencyCounter {
         StdOut.println("distinct = " + distinct);
         StdOut.println("words    = " + words);
     }
+
+    public static void count(int[] a) {
+        int distinct = 0, words = 0;
+        ST<Integer, Integer> st = new ST<Integer, Integer>();
+
+        for (Integer key : a) {
+            words++;
+            if (st.contains(key)) {
+                st.put(key, st.get(key) + 1);
+            } else {
+                st.put(key, 1);
+                distinct++;
+            }
+        }
+
+        // find a key with the highest frequency count
+        Integer max = Integer.MIN_VALUE;
+        st.put(max, 0);
+        for (Integer word : st.keys()) {
+            if (st.get(word) > st.get(max))
+                max = word;
+        }
+
+        StdOut.println(max + " " + st.get(max));
+        StdOut.println("distinct = " + distinct);
+        StdOut.println("words    = " + words);
+    }
 }
 
 /******************************************************************************
