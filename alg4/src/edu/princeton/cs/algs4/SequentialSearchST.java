@@ -121,6 +121,7 @@ public class SequentialSearchST<Key, Value> {
     public Value get(Key key) {
         if (key == null) throw new IllegalArgumentException("argument to get() is null");
         for (Node x = first; x != null; x = x.next) {
+            compares++;
             if (key.equals(x.key))
                 return x.val;
         }
@@ -171,6 +172,7 @@ public class SequentialSearchST<Key, Value> {
     // warning: function call stack too large if table is large
     private Node delete(Node x, Key key) {
         if (x == null) return null;
+        compares++;
         if (key.equals(x.key)) {
             n--;
             return x.next;
