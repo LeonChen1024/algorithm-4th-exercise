@@ -10,6 +10,16 @@ import edu.princeton.cs.algs4.StdRandom;
  */
 public class ArrayGenUtil {
 
+    public static int[] genRandIntArr(int length, int lowerBound, int upperBound) {
+        int[] array = new int[length];
+
+        for (int i = 0; i < length; i++) {
+            array[i] = StdRandom.uniform(lowerBound, upperBound);
+        }
+
+        return array;
+    }
+
     public static Comparable[] genRandomArr2Values(int length) {
         Comparable[] array = new Comparable[length];
 
