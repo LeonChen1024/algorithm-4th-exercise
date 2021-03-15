@@ -24,7 +24,7 @@ import edu.princeton.cs.algs4.Stopwatch;
  */
 class E3_1_24 {
 
-    private static class InterpolationST
+    public static class InterpolationST
             extends BinarySearchST<Integer, Integer> {
         public InterpolationST() {
             super(INIT_CAPACITY);
