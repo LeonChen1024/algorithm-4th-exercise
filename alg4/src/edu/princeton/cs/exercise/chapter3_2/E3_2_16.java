@@ -9,7 +9,7 @@ package edu.princeton.cs.exercise.chapter3_2;
  * 长度的差额为 2N(见定理C)
  *
  * @author LeonChen
- * @since 4/13/20
+ * @since 4/13/21
  */
 class E3_2_16 {
 

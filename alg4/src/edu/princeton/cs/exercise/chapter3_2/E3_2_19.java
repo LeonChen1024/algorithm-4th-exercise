@@ -7,7 +7,7 @@ package edu.princeton.cs.exercise.chapter3_2;
  * 绘制出将练习 3.2.1 中的二叉树一个个删除根节点后的 BST 序列
  *
  * @author LeonChen
- * @since 4/16/20
+ * @since 4/16/21
  */
 class E3_2_19 {
 

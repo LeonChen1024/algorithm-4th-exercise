@@ -10,7 +10,7 @@ package edu.princeton.cs.exercise.chapter3_2;
  * 插入到树中,或者是访问频率的降序插入,或者是其他的顺序?解释你的答案
  *
  * @author LeonChen
- * @since 4/2/20
+ * @since 4/2/21
  */
 class E3_2_05 {
 

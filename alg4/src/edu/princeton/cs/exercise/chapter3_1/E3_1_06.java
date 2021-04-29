@@ -10,7 +10,7 @@ import edu.princeton.cs.algs4.FrequencyCounter;
  * 的函数
  *
  * @author LeonChen
- * @since 2/2/20
+ * @since 2/2/21
  */
 class E3_1_06 {
 

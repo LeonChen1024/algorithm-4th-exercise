@@ -11,7 +11,7 @@ package edu.princeton.cs.exercise.chapter3_2;
  * 使用了线性级的空间).
  *
  * @author LeonChen
- * @since 4/3/20
+ * @since 4/3/21
  */
 class E3_2_06 {
 

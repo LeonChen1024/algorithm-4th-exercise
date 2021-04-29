@@ -14,7 +14,7 @@ import java.util.NoSuchElementException;
  * 一个 Item 数组作为参数并且使用合并排序来排列数组.
  *
  * @author LeonChen
- * @since 2/8/20
+ * @since 2/8/21
  */
 class E3_1_12 {
 
@@ -163,7 +163,8 @@ class E3_1_12 {
          * @throws IllegalArgumentException if {@code key} is {@code null}
          */
         public boolean contains(K key) {
-            if (key == null) throw new IllegalArgumentException("argument to contains() is null");
+            if (key == null)
+                throw new IllegalArgumentException("argument to contains() is null");
             return get(key) != null;
         }
 
@@ -176,7 +177,8 @@ class E3_1_12 {
          * @throws IllegalArgumentException if {@code key} is {@code null}
          */
         public V get(K key) {
-            if (key == null) throw new IllegalArgumentException("argument to get() is null");
+            if (key == null)
+                throw new IllegalArgumentException("argument to get() is null");
             if (isEmpty()) return null;
             int i = rank(key);
             if (i < n && items[i].key.compareTo(key) == 0) return items[i].value;
@@ -191,7 +193,8 @@ class E3_1_12 {
          * @throws IllegalArgumentException if {@code key} is {@code null}
          */
         public int rank(K key) {
-            if (key == null) throw new IllegalArgumentException("argument to rank() is null");
+            if (key == null)
+                throw new IllegalArgumentException("argument to rank() is null");
 
             int lo = 0, hi = n - 1;
             while (lo <= hi) {
@@ -215,8 +218,9 @@ class E3_1_12 {
          * @throws IllegalArgumentException if {@code key} is {@code null}
          */
         public void put(Item<K, V> item) {
-            if (item.key == null) throw new IllegalArgumentException("first argument to put() is " +
-                    "null");
+            if (item.key == null)
+                throw new IllegalArgumentException("first argument to put() is " +
+                        "null");
 
             if (item.value == null) {
                 delete(item.key);
@@ -251,7 +255,8 @@ class E3_1_12 {
          * @throws IllegalArgumentException if {@code key} is {@code null}
          */
         public void delete(K key) {
-            if (key == null) throw new IllegalArgumentException("argument to delete() is null");
+            if (key == null)
+                throw new IllegalArgumentException("argument to delete() is null");
             if (isEmpty()) return;
 
             // compute rank
@@ -281,7 +286,8 @@ class E3_1_12 {
          * @throws NoSuchElementException if the symbol table is empty
          */
         public void deleteMin() {
-            if (isEmpty()) throw new NoSuchElementException("Symbol table underflow error");
+            if (isEmpty())
+                throw new NoSuchElementException("Symbol table underflow error");
             delete(min());
         }
 
@@ -291,7 +297,8 @@ class E3_1_12 {
          * @throws NoSuchElementException if the symbol table is empty
          */
         public void deleteMax() {
-            if (isEmpty()) throw new NoSuchElementException("Symbol table underflow error");
+            if (isEmpty())
+                throw new NoSuchElementException("Symbol table underflow error");
             delete(max());
         }
 
@@ -307,7 +314,8 @@ class E3_1_12 {
          * @throws NoSuchElementException if this symbol table is empty
          */
         public K min() {
-            if (isEmpty()) throw new NoSuchElementException("called min() with empty symbol table");
+            if (isEmpty())
+                throw new NoSuchElementException("called min() with empty symbol table");
             return items[0].key;
         }
 
@@ -318,7 +326,8 @@ class E3_1_12 {
          * @throws NoSuchElementException if this symbol table is empty
          */
         public K max() {
-            if (isEmpty()) throw new NoSuchElementException("called max() with empty symbol table");
+            if (isEmpty())
+                throw new NoSuchElementException("called max() with empty symbol table");
             return items[n - 1].key;
         }
 
@@ -346,7 +355,8 @@ class E3_1_12 {
          * @throws IllegalArgumentException if {@code key} is {@code null}
          */
         public K floor(K key) {
-            if (key == null) throw new IllegalArgumentException("argument to floor() is null");
+            if (key == null)
+                throw new IllegalArgumentException("argument to floor() is null");
             int i = rank(key);
             if (i < n && key.compareTo(items[i].key) == 0) return items[i].key;
             if (i == 0) return null;
@@ -362,7 +372,8 @@ class E3_1_12 {
          * @throws IllegalArgumentException if {@code key} is {@code null}
          */
         public K ceiling(K key) {
-            if (key == null) throw new IllegalArgumentException("argument to ceiling() is null");
+            if (key == null)
+                throw new IllegalArgumentException("argument to ceiling() is null");
             int i = rank(key);
             if (i == n) return null;
             else return items[i].key;
@@ -379,8 +390,10 @@ class E3_1_12 {
          *                                  is {@code null}
          */
         public int size(K lo, K hi) {
-            if (lo == null) throw new IllegalArgumentException("first argument to size() is null");
-            if (hi == null) throw new IllegalArgumentException("second argument to size() is null");
+            if (lo == null)
+                throw new IllegalArgumentException("first argument to size() is null");
+            if (hi == null)
+                throw new IllegalArgumentException("second argument to size() is null");
 
             if (lo.compareTo(hi) > 0) return 0;
             if (contains(hi)) return rank(hi) - rank(lo) + 1;
@@ -410,8 +423,10 @@ class E3_1_12 {
          *                                  is {@code null}
          */
         public Iterable<K> keys(K lo, K hi) {
-            if (lo == null) throw new IllegalArgumentException("first argument to keys() is null");
-            if (hi == null) throw new IllegalArgumentException("second argument to keys() is null");
+            if (lo == null)
+                throw new IllegalArgumentException("first argument to keys() is null");
+            if (hi == null)
+                throw new IllegalArgumentException("second argument to keys() is null");
 
             Queue<K> queue = new Queue<K>();
             if (lo.compareTo(hi) > 0) return queue;

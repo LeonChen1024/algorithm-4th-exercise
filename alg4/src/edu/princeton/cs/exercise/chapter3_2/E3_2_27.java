@@ -15,7 +15,7 @@ package edu.princeton.cs.exercise.chapter3_2;
  * 估算使用 双城表 在FrequencyCounter 中构建 BST 的内存占用.
  *
  * @author LeonChen
- * @since 4/23/20
+ * @since 4/23/21
  */
 class E3_2_27 {
 

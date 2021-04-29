@@ -12,7 +12,7 @@ import edu.princeton.cs.algs4.StdOut;
  * 方法构建一个表使用线性时间)
  *
  * @author LeonChen
- * @since 2/23/20
+ * @since 2/23/21
  */
 class E3_1_28 {
 
@@ -43,7 +43,8 @@ class E3_1_28 {
 
         @Override
         public void put(Key key, Value val) {
-            if (key == null) throw new IllegalArgumentException("first argument to put() is null");
+            if (key == null)
+                throw new IllegalArgumentException("first argument to put() is null");
 
             if (val == null) {
                 delete(key);

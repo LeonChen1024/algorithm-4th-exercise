@@ -11,7 +11,7 @@ import edu.princeton.cs.algs4.FrequencyCounter;
  * 运行你的程序输入 tale.txt 使用长度临界值为 1,8,10
  *
  * @author LeonChen
- * @since 2/5/20
+ * @since 2/5/21
  */
 class E3_1_09 {
 

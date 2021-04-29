@@ -9,7 +9,7 @@ package edu.princeton.cs.exercise.chapter3_2;
  * 构建这个树需要多少次对比?
  *
  * @author LeonChen
- * @since 3/29/20
+ * @since 3/29/21
  */
 class E3_2_01 {
 

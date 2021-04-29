@@ -10,7 +10,7 @@ import edu.princeton.cs.algs4.StdRandom;
  * 采样选择排序.调查使用采样来优化选择排序的想法.提示:使用中间值不总是有效的
  *
  * @author LeonChen
- * @since 1/5/20
+ * @since 1/5/21
  */
 class E02_05_23 {
 

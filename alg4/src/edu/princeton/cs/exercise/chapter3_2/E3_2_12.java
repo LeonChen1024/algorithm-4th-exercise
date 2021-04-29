@@ -12,7 +12,7 @@ import java.util.NoSuchElementException;
  * 开发一个 BST 实现忽略 rank() 和 select() 并且 Node 中没有使用 计算大小 字段
  *
  * @author LeonChen
- * @since 4/9/20
+ * @since 4/9/21
  */
 class E3_2_12 {
 
@@ -542,7 +542,7 @@ class E3_2_12 {
                 StdOut.println(s + " " + st.get(s));
 
             StdOut.println();
-            
+
             StdOut.println("size = " + st.size());
             StdOut.println("min  = " + st.min());
             StdOut.println("max  = " + st.max());

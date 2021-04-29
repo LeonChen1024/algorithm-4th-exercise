@@ -9,7 +9,7 @@ package edu.princeton.cs.exercise.chapter3_1;
  * 的成本相同
  *
  * @author LeonChen
- * @since 2/20/20
+ * @since 2/20/21
  */
 class E3_1_27 {
 

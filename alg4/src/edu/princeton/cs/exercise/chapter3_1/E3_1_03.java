@@ -12,7 +12,7 @@ import edu.princeton.cs.algs4.StdOut;
  * 开发一个符号表实现 OrderedSequentialSearchST,使用一个有序链表作为底层数据结构来实现有序符号表 API
  *
  * @author LeonChen
- * @since 1/30/20
+ * @since 1/30/21
  */
 class E3_1_03 {
 
@@ -75,7 +75,8 @@ class E3_1_03 {
          * @throws IllegalArgumentException if {@code key} is {@code null}
          */
         public boolean contains(Key key) {
-            if (key == null) throw new IllegalArgumentException("argument to contains() is null");
+            if (key == null)
+                throw new IllegalArgumentException("argument to contains() is null");
             return get(key) != null;
         }
 
@@ -88,7 +89,8 @@ class E3_1_03 {
          * @throws IllegalArgumentException if {@code key} is {@code null}
          */
         public Value get(Key key) {
-            if (key == null) throw new IllegalArgumentException("argument to get() is null");
+            if (key == null)
+                throw new IllegalArgumentException("argument to get() is null");
             for (Node x = first; x != null; x = x.next) {
                 if (key.equals(x.key))
                     return x.val;
@@ -101,7 +103,8 @@ class E3_1_03 {
         }
 
         public void put(Key key, Value val) {
-            if (key == null) throw new IllegalArgumentException("first argument to put() is null");
+            if (key == null)
+                throw new IllegalArgumentException("first argument to put() is null");
             if (val == null) {
                 delete(key);
                 return;
@@ -143,7 +146,8 @@ class E3_1_03 {
          * @throws IllegalArgumentException if {@code key} is {@code null}
          */
         public void delete(Key key) {
-            if (key == null) throw new IllegalArgumentException("argument to delete() is null");
+            if (key == null)
+                throw new IllegalArgumentException("argument to delete() is null");
             first = delete(first, key);
         }
 

@@ -13,7 +13,7 @@ import edu.princeton.cs.algs4.StdOut;
  * 值并且分析和用实验证明它
  *
  * @author LeonChen
- * @since 3/10/20
+ * @since 3/10/21
  */
 class E3_1_40 {
 

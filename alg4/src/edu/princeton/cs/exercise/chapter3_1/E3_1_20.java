@@ -7,7 +7,7 @@ package edu.princeton.cs.exercise.chapter3_1;
  * 完成主张 B 的证明(证明它持有了所有 N 的值). 提示: 可以先证明 C(N) 是单调的:对于所有的 N>0 来说C(N)<=C(N+1).
  *
  * @author LeonChen
- * @since 2/13/20
+ * @since 2/13/21
  */
 class E3_1_20 {
 

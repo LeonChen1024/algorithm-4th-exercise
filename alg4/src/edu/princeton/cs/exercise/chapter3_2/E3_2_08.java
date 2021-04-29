@@ -10,7 +10,7 @@ package edu.princeton.cs.exercise.chapter3_2;
  * 的次数,如果连接的个数是 2 的幂次那么所有的空连接都会在相同的层级否则会在两个层级上
  *
  * @author LeonChen
- * @since 4/5/20
+ * @since 4/5/21
  */
 class E3_2_08 {
 

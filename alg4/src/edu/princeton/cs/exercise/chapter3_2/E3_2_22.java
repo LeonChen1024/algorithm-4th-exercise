@@ -7,7 +7,7 @@ package edu.princeton.cs.exercise.chapter3_2;
  * 证明 如果一个 BST 中的节点有两个子节点,他的后继没有左子节点冰倩他的前置没有右子节点
  *
  * @author LeonChen
- * @since 4/19/20
+ * @since 4/19/21
  */
 class E3_2_22 {
 

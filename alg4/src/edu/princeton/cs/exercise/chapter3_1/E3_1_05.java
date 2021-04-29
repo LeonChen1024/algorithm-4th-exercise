@@ -8,7 +8,7 @@ import edu.princeton.cs.algs4.SequentialSearchST;
  * 给 SequentialSearchST 实现size(), delete(), 和 keys()
  *
  * @author LeonChen
- * @since 2/1/20
+ * @since 2/1/21
  */
 class E3_1_05 {
 

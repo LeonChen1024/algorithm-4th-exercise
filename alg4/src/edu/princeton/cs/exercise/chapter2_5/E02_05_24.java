@@ -13,7 +13,7 @@ import java.util.NoSuchElementException;
  * 稳定的优先队列.开发一个稳定的优先队列实现(会将重复的 key 按照原始顺序排列)
  *
  * @author LeonChen
- * @since 1/6/20
+ * @since 1/6/21
  */
 class E02_05_24 {
 

@@ -7,7 +7,7 @@ package edu.princeton.cs.exercise.chapter3_2;
  * 给出 5 种键 A X C S E R H 的顺序,当他们插入一个空 BST 的时候会产生最佳情况
  *
  * @author LeonChen
- * @since 3/31/20
+ * @since 3/31/21
  */
 class E3_2_03 {
 

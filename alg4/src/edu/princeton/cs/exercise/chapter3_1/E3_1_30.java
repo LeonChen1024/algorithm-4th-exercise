@@ -12,7 +12,7 @@ import edu.princeton.cs.algs4.BinarySearchST;
  * i 应该总是等于 rank(select(i)) 并且数组总是有序的
  *
  * @author LeonChen
- * @since 2/25/20
+ * @since 2/25/21
  */
 class E3_1_30 {
 
