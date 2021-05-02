@@ -8,7 +8,7 @@ package edu.princeton.cs.exercise.chapter3_1;
  * 更好一些的
  *
  * @author LeonChen
- * @since 3/4/20
+ * @since 3/4/21
  */
 class E3_1_36 {
 

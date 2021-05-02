@@ -10,7 +10,7 @@ import edu.princeton.cs.algs4.*;
  * 你会为一个做 10^3 put() 操作和10^6 get()操作随机混合的应用选择本章中的哪个符号表?证明你的答案
  *
  * @author LeonChen
- * @since 2/8/20
+ * @since 2/8/21
  */
 class E3_1_13 {
 

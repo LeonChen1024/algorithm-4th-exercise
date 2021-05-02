@@ -17,7 +17,7 @@ import edu.princeton.cs.exercise.util.FileUtil;
  * 频率时花在 put()操作和 get()操作的时间比,其中 M =10, 20, 30. 如果使用 tale.txt 又会是什么结果呢?
  *
  * @author LeonChen
- * @since 3/5/20
+ * @since 3/5/21
  */
 class E3_1_37 {
 

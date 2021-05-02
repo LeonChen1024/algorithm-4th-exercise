@@ -136,7 +136,7 @@ public class BST<Key extends Comparable<Key>, Value> {
         return get(root, key);
     }
 
-    private Value get(Node x, Key key) {
+    protected Value get(Node x, Key key) {
         if (key == null)
             throw new IllegalArgumentException("calls get() with a null key");
         if (x == null) return null;
@@ -446,7 +446,7 @@ public class BST<Key extends Comparable<Key>, Value> {
         return queue;
     }
 
-    private void keys(Node x, Queue<Key> queue, Key lo, Key hi) {
+    protected void keys(Node x, Queue<Key> queue, Key lo, Key hi) {
         if (x == null) return;
         int cmplo = lo.compareTo(x.key);
         int cmphi = hi.compareTo(x.key);

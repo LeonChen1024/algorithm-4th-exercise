@@ -7,7 +7,7 @@ package edu.princeton.cs.exercise.chapter3_2;
  * 画出当你对练习 3.2.1 中的 BST 按照插入顺序一个接一个的删除时的BST 序列.
  *
  * @author LeonChen
- * @since 4/14/20
+ * @since 4/14/21
  */
 class E3_2_17 {
 

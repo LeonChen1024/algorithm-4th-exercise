@@ -16,7 +16,7 @@ import edu.princeton.cs.exercise.util.ArrayGenUtil;
  * key 序列已经是有序的了,key 序列是倒序的,key 序列全是一样的,以及 key 序列只有两种值
  *
  * @author LeonChen
- * @since 2/27/20
+ * @since 2/27/21
  */
 class E3_1_32 {
     private static final String TYPE_ORDERED = "ordered";

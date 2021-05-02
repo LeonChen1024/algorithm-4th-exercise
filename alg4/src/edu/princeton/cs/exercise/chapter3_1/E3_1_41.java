@@ -13,7 +13,7 @@ import edu.princeton.cs.algs4.StdOut;
  * 整数(见 3.1.24).预测并分析和验证结果.
  *
  * @author LeonChen
- * @since 3/15/20
+ * @since 3/15/21
  */
 class E3_1_41 {
 

@@ -12,7 +12,7 @@ import edu.princeton.cs.algs4.StdRandom;
  * 10^5, 和 10^6
  *
  * @author LeonChen
- * @since 2/3/20
+ * @since 2/3/21
  */
 class E3_1_07 {
 

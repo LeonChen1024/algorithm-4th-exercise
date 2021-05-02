@@ -1,22 +1,18 @@
 package edu.princeton.cs.exercise.chapter2_5;
 
 
-import edu.princeton.cs.algs4.Insertion;
-import edu.princeton.cs.algs4.Merge;
-import edu.princeton.cs.algs4.Quick;
-import edu.princeton.cs.algs4.Selection;
-import edu.princeton.cs.algs4.StdOut;
+import edu.princeton.cs.algs4.*;
 
 /**
  * 2.5.18 Force stability. Write a wrapper method that makes any sort stable by creating a new
  * key type that allows you to append each key’s index to the key, call sort(), the n restore the
  * original key after the sort.
- *
+ * <p>
  * 强制稳定性. 编写一个包装方法使得任意的排序稳定,通过创建一个新的类型允许你添加key 的index 到key中,调用sort(),
  * 结束后将 key 按照初始排序稳定
  *
  * @author LeonChen
- * @since 12/29/20
+ * @since 12/29/21
  */
 class E02_05_18 {
 

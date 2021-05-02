@@ -11,7 +11,7 @@ import edu.princeton.cs.algs4.StdOut;
  * 修改 FrequencyCounter 来打印出所以出现频率最高的值,不仅仅是其中一个.提示:使用 Queue
  *
  * @author LeonChen
- * @since 2/12/20
+ * @since 2/12/21
  */
 class E3_1_19 {
 

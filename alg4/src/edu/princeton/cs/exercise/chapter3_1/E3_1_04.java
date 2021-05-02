@@ -10,7 +10,7 @@ import edu.princeton.cs.algs4.StdOut;
  * 开发一个 Time 和 Event 的 ADT ,可以像 367 页那样处理数据
  *
  * @author LeonChen
- * @since 1/31/20
+ * @since 1/31/21
  */
 class E3_1_04 {
 

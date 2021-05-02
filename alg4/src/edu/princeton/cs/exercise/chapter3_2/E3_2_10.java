@@ -15,7 +15,7 @@ import edu.princeton.cs.algs4.StdOut;
  * 添加代码来接受合适的额外命令行参数
  *
  * @author LeonChen
- * @since 4/7/20
+ * @since 4/7/21
  */
 class E3_2_10 {
 

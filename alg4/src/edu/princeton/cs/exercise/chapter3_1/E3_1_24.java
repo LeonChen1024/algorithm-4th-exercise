@@ -20,7 +20,7 @@ import edu.princeton.cs.algs4.Stopwatch;
  * SearchCompare 的FrequencyCounter测试你的实现和 BinarySearchST的对比.
  *
  * @author LeonChen
- * @since 2/17/20
+ * @since 2/17/21
  */
 class E3_1_24 {
 
@@ -49,7 +49,8 @@ class E3_1_24 {
 
         @Override
         public int rank(Integer key) {
-            if (key == null) throw new IllegalArgumentException("argument to rank() is null");
+            if (key == null)
+                throw new IllegalArgumentException("argument to rank() is null");
 
             int lo = 0, hi = n - 1;
 

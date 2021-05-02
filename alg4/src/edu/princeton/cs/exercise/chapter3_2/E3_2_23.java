@@ -7,7 +7,7 @@ package edu.princeton.cs.exercise.chapter3_2;
  * delete() 操作是否是可交换的?(删除 x,然后再删除 y 会得出会和 先删除 y 再删除 x 相同的结果?)
  *
  * @author LeonChen
- * @since 4/20/20
+ * @since 4/21/21
  */
 class E3_2_23 {
 

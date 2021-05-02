@@ -10,7 +10,7 @@ package edu.princeton.cs.exercise.chapter3_2;
  * 它有两个空链接.给出 5 种这些键会产生最坏情况树的排序
  *
  * @author LeonChen
- * @since 3/30/20
+ * @since 3/30/21
  */
 class E3_2_02 {
 

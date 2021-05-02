@@ -15,7 +15,7 @@ import java.util.List;
  * 精确几率.求练习 3.2.9 中树插入 N 个不同元素到空树的每种树的概率
  *
  * @author LeonChen
- * @since 4/22/20
+ * @since 4/22/21
  */
 class E3_2_26 {
 

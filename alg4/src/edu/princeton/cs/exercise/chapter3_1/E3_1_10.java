@@ -11,7 +11,7 @@ import edu.princeton.cs.algs4.StdOut;
  * 多少次比较
  *
  * @author LeonChen
- * @since 2/6/20
+ * @since 2/6/21
  */
 class E3_1_10 {
 

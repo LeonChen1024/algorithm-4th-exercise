@@ -10,7 +10,7 @@ package edu.princeton.cs.exercise.chapter3_1;
  * 二进制表达相当于代表着 ⎣N/2⎦
  *
  * @author LeonChen
- * @since 2/15/20
+ * @since 2/15/21
  */
 class E3_1_23 {
 

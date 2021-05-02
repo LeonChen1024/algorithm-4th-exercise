@@ -16,7 +16,7 @@ import edu.princeton.cs.algs4.StdOut;
  * 对应的分数的平均值)
  *
  * @author LeonChen
- * @since 1/28/20
+ * @since 1/28/21
  */
 class E3_1_01 {
 

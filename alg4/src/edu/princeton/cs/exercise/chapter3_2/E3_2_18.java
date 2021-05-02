@@ -7,7 +7,7 @@ package edu.princeton.cs.exercise.chapter3_2;
  * 绘制出当你对练习 3.2.1 中的二叉树按照字母表顺序一个个删除元素的 BST 序列
  *
  * @author LeonChen
- * @since 4/15/20
+ * @since 4/15/21
  */
 class E3_2_18 {
 

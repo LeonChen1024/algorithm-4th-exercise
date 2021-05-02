@@ -7,7 +7,7 @@ package edu.princeton.cs.exercise.chapter3_2;
  * 给 BST 添加一个方法 randomKey() ,从符号表返回一个随机 key ,在最差的情况下时间成本和树高成比例
  *
  * @author LeonChen
- * @since 4/18/20
+ * @since 4/18/21
  */
 class E3_2_21 {
 

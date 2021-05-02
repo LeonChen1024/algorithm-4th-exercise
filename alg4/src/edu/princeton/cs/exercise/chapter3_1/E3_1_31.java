@@ -18,7 +18,7 @@ import edu.princeton.cs.exercise.util.ArrayGenUtil;
  * 并且打印出平均运行时间或者绘制出图表
  *
  * @author LeonChen
- * @since 2/26/20
+ * @since 2/26/21
  */
 class E3_1_31 {
 

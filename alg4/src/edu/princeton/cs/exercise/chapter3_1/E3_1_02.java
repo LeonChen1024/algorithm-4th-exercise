@@ -11,7 +11,7 @@ import edu.princeton.cs.algs4.StdOut;
  * 开发一个 ArrayST 符号表实现,使用一个 (无序)数组作为底层的数据结构来实现基础的符号表 API
  *
  * @author LeonChen
- * @since 1/29/20
+ * @since 1/29/21
  */
 class E3_1_02 {
 

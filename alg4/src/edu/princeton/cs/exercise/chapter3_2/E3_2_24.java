@@ -7,7 +7,7 @@ package edu.princeton.cs.exercise.chapter3_2;
  * 证明基于对比算法不可能构建出一个对比次数小于 lg(N!)~NlgN 的 BST
  *
  * @author LeonChen
- * @since 4/21/20
+ * @since 4/21/21
  */
 class E3_2_24 {
 

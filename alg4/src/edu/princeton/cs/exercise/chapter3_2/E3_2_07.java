@@ -13,7 +13,7 @@ package edu.princeton.cs.exercise.chapter3_2;
  * 到每个节点(消耗线性空间和每次查找的常量级时间)
  *
  * @author LeonChen
- * @since 4/4/20
+ * @since 4/4/21
  */
 class E3_2_07 {
 
