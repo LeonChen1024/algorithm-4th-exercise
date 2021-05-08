@@ -64,9 +64,9 @@ import java.util.NoSuchElementException;
  * @author Kevin Wayne
  */
 public class BST<Key extends Comparable<Key>, Value> {
-    protected Node root;             // root of BST
+    public Node root;             // root of BST
 
-    protected class Node {
+    public class Node {
         public int depthSum;
         public Key key;           // sorted by key
         public Value val;         // associated data
@@ -196,7 +196,7 @@ public class BST<Key extends Comparable<Key>, Value> {
         assert check();
     }
 
-    private Node deleteMin(Node x) {
+    protected Node deleteMin(Node x) {
         if (x.left == null) return x.right;
         x.left = deleteMin(x.left);
         x.size = size(x.left) + size(x.right) + 1;
@@ -214,7 +214,7 @@ public class BST<Key extends Comparable<Key>, Value> {
         assert check();
     }
 
-    private Node deleteMax(Node x) {
+    protected Node deleteMax(Node x) {
         if (x.right == null) return x.left;
         x.right = deleteMax(x.right);
         x.size = size(x.left) + size(x.right) + 1;
@@ -273,7 +273,7 @@ public class BST<Key extends Comparable<Key>, Value> {
         return min(root).key;
     }
 
-    private Node min(Node x) {
+    protected Node min(Node x) {
         if (x.left == null) return x;
         else return min(x.left);
     }
@@ -290,7 +290,7 @@ public class BST<Key extends Comparable<Key>, Value> {
         return max(root).key;
     }
 
-    private Node max(Node x) {
+    protected Node max(Node x) {
         if (x.right == null) return x;
         else return max(x.right);
     }
