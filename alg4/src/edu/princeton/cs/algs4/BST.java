@@ -167,7 +167,7 @@ public class BST<Key extends Comparable<Key>, Value> {
         assert check();
     }
 
-    private Node put(Node x, Key key, Value val, int depth) {
+    protected Node put(Node x, Key key, Value val, int depth) {
         if (x == null) return new Node(key, val, 1);
         int cmp = key.compareTo(x.key);
         if (cmp < 0) x.left = put(x.left, key, val, depth + 1);
