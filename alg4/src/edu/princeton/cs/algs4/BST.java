@@ -383,7 +383,7 @@ public class BST<Key extends Comparable<Key>, Value> {
     }
 
     // Return key of rank k.
-    private Node select(Node x, int k) {
+    public Node select(Node x, int k) {
         if (x == null) return null;
         int t = size(x.left);
         if (t > k) return select(x.left, k);
