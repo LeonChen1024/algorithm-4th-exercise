@@ -3,6 +3,8 @@ package edu.princeton.cs.exercise.chapter3_3;
 /**
  * 3.3.12 Draw the red-black BST that results after each transformation (color flip or
  * rotation) during the insertion of P for our standard indexing client.
+ * <p>
+ * 绘制出在标准索引客户端中插入 P 之后每次转换的结果(颜色翻转或者旋转)
  *
  * @author LeonChen
  * @since 6/17/21
