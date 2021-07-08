@@ -69,7 +69,7 @@ import java.util.NoSuchElementException;
 
 public class RedBlackBST<Key extends Comparable<Key>, Value> {
 
-    protected static final boolean RED = true;
+    public static final boolean RED = true;
     protected static final boolean BLACK = false;
 
     public Node root;     // root of the BST
