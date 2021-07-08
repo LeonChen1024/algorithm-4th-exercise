@@ -239,7 +239,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
     }
 
     // delete the key-value pair with the minimum key rooted at h
-    private Node deleteMin(Node h) {
+    protected Node deleteMin(Node h) {
         if (h.left == null)
             return null;
 
@@ -449,7 +449,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
     }
 
     // the smallest key in subtree rooted at x; null if no such key
-    private Node min(Node x) {
+    protected Node min(Node x) {
         // assert x != null;
         if (x.left == null) return x;
         else return min(x.left);
