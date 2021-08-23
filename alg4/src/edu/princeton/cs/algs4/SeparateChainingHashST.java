@@ -43,7 +43,7 @@ package edu.princeton.cs.algs4;
 public class SeparateChainingHashST<Key, Value> {
     private static final int INIT_CAPACITY = 4;
 
-    protected int n;                                // number of key-value pairs
+    public int n;                                // number of key-value pairs
     public int m;                                // hash table size
     public SequentialSearchST<Key, Value>[] st;  // array of linked-list symbol tables
 
@@ -82,7 +82,7 @@ public class SeparateChainingHashST<Key, Value> {
     }
 
     // hash value between 0 and m-1
-    private int hash(Key key) {
+    protected int hash(Key key) {
         return (key.hashCode() & 0x7fffffff) % m;
     }
 
