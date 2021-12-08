@@ -11,4 +11,7 @@ public class Constants {
     public static final int UPPER_LETTER_FINAL_INDEX = 90;
     public static final String FILES_PATH = "src/edu/princeton/cs/algs4-data/";
     public static final String MOVIES_FILE = "movies.txt";
+    public static final String US_AIR_FILE = "";
+
+    public static final String PARIS_METRO_FILE = "parisMetro";
 }
